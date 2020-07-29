@@ -1,0 +1,27 @@
+#automatonRender {
+    border: solid 1px black;
+    border-radius: 5px;
+    background: url("/back.jpeg");
+    min-height: 600px;
+    padding: 5px;
+    height: 100%;
+
+    svg {
+        background: white;
+        box-sizing: border-box;
+        //-webkit-box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+
+        //#state {
+        //    fill: transparent;
+        //    stroke: black;
+        //    stroke-width: 1px;
+        //}
+        //
+        .active {
+            stroke: blue !important;
+            stroke-width: 4px !important;
+        }
+    }
+}

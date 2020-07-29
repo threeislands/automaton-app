@@ -1,0 +1,67 @@
+.dropCommon {
+  width: 0;
+  //left: 7px;
+  height: 0px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 30px solid hotpink;
+  position: absolute;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  /* -moz-animation-timing-function: cubic-bezier(1, 0, .91, .19);
+  -webkit-animation-timing-function: cubic-bezier(1, 0, .91, .19);
+  animation-timing-function: cubitc-bezier(1, 0, .91, .19); */
+  /* -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s; */
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@for $i from 0 to 8 {
+  $rotate: $i * 45;
+  .drop#{$rotate} {
+    -moz-animation-name: drip#{$rotate};
+    -webkit-animation-name: drip#{$rotate};
+    animation-name: drip#{$rotate};
+  }
+}
+
+.dropCommon:before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 20px;
+  left: -6px;
+  background: hotpink;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  top: 22px;
+}
+
+$rotates: (x: 0, y: 1), (x: -0.7, y: 0.7), (x: -1, y: 0), (x: -0.7, y: -0.7),
+(x: 0, y: -1), (x: 0.7, y: -0.7), (x: 1, y: 0), (x: 0.7, y: 0.7);
+
+@for $i from 0 to 8 {
+  $rotate: $i * 45;
+  @keyframes drip#{$rotate} {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.7;
+    }
+    60% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(map_get(nth($rotates, $i + 1), x) * 30 +  px, map_get(nth($rotates, $i + 1), y) * 30 +  px) rotate($rotate + deg);
+      opacity: 0;
+    }
+  }
+}

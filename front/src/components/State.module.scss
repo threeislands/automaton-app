@@ -1,0 +1,17 @@
+.state {
+  fill: white;
+}
+
+.normal {
+  circle {
+    stroke: #333333;
+    stroke-width: 2px;
+  }
+}
+
+.active {
+  circle {
+    stroke: #ff1464;
+    stroke-width: 3px;
+  }
+}

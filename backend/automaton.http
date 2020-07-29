@@ -1,0 +1,33 @@
+POST localhost:5000/test/automaton/1
+Content-Type: application/json
+
+{
+  "states": [
+    {
+      "id": "stateId_0",
+      "x": 300,
+      "y": 300,
+      "accept": true
+    },
+    {
+      "id": "stateId_1",
+      "x": 500,
+      "y": 500,
+      "accept": false
+    }
+  ],
+  "transitions": [
+    {
+      "id": "transitionId_2",
+      "fromStateId": "stateId_0",
+      "toStateId": "stateId_1",
+      "inputs": ["1", "2"]
+    },
+    {
+      "id": "transitionId_3",
+      "fromStateId": "stateId_1",
+      "toStateId": "stateId_1",
+      "inputs": ["1", "2"]
+    }
+  ]
+}

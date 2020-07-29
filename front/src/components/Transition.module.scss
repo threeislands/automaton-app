@@ -1,0 +1,26 @@
+.transition {
+  path {
+    stroke: #333333;
+    stroke-width: 2.5px;
+    fill: none;
+  }
+
+  path:hover {
+    cursor: grab;
+  }
+
+  foreignObject {
+
+    margin: 0px;
+
+    input {
+      z-index: 999999991;
+      margin: 1px;
+      padding: 1px 3px 1px 4px;
+      height: 25px;
+      background: white;
+    }
+
+  }
+
+}

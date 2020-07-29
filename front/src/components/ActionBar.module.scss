@@ -1,0 +1,43 @@
+#actionBar {
+  padding-top: 5px;
+}
+
+.action-bar-wrapper {
+  background: url(/back.jpeg);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: solid 1px black;
+}
+
+.input-sequence-area {
+  border-radius: 5px;
+  padding: 5px 3px 3px 3px;
+  background: saddlebrown;
+  margin: 5px;
+}
+
+.input-sequence-lbl {
+  margin: 3px;
+  font-size: 1.3rem;
+  color: white;
+  font-weight: bold;
+}
+
+.input-sequence {
+  font-size: 1.5rem;
+  border: solid 2px black;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  background: white;
+  color: black;
+}
+
+.btn-area {
+  padding:10px;
+
+  button {
+    //margin-bottom: 0px;
+    margin: 0px 4px;
+  }
+}
