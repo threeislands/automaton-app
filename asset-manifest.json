@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/automaton-app/static/css/main.494c1650.chunk.css",
+    "main.js": "/automaton-app/static/js/main.45d453f5.chunk.js",
+    "main.js.map": "/automaton-app/static/js/main.45d453f5.chunk.js.map",
+    "runtime-main.js": "/automaton-app/static/js/runtime-main.e1c7bbe9.js",
+    "runtime-main.js.map": "/automaton-app/static/js/runtime-main.e1c7bbe9.js.map",
+    "static/js/2.98248638.chunk.js": "/automaton-app/static/js/2.98248638.chunk.js",
+    "static/js/2.98248638.chunk.js.map": "/automaton-app/static/js/2.98248638.chunk.js.map",
+    "index.html": "/automaton-app/index.html",
+    "precache-manifest.ada039d0a7de4db34fcdefd04bfbe2da.js": "/automaton-app/precache-manifest.ada039d0a7de4db34fcdefd04bfbe2da.js",
+    "service-worker.js": "/automaton-app/service-worker.js",
+    "static/css/main.494c1650.chunk.css.map": "/automaton-app/static/css/main.494c1650.chunk.css.map",
+    "static/js/2.98248638.chunk.js.LICENSE.txt": "/automaton-app/static/js/2.98248638.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e1c7bbe9.js",
+    "static/js/2.98248638.chunk.js",
+    "static/css/main.494c1650.chunk.css",
+    "static/js/main.45d453f5.chunk.js"
+  ]
+}
