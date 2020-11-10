@@ -1,22 +1,36 @@
 {
   "files": {
-    "main.css": "/automaton-app/static/css/main.494c1650.chunk.css",
-    "main.js": "/automaton-app/static/js/main.45d453f5.chunk.js",
-    "main.js.map": "/automaton-app/static/js/main.45d453f5.chunk.js.map",
+    "main.css": "/automaton-app/static/css/main.34fc1070.chunk.css",
+    "main.js": "/automaton-app/static/js/main.66f944ee.chunk.js",
+    "main.js.map": "/automaton-app/static/js/main.66f944ee.chunk.js.map",
     "runtime-main.js": "/automaton-app/static/js/runtime-main.e1c7bbe9.js",
     "runtime-main.js.map": "/automaton-app/static/js/runtime-main.e1c7bbe9.js.map",
-    "static/js/2.98248638.chunk.js": "/automaton-app/static/js/2.98248638.chunk.js",
-    "static/js/2.98248638.chunk.js.map": "/automaton-app/static/js/2.98248638.chunk.js.map",
+    "static/js/2.612274d4.chunk.js": "/automaton-app/static/js/2.612274d4.chunk.js",
+    "static/js/2.612274d4.chunk.js.map": "/automaton-app/static/js/2.612274d4.chunk.js.map",
     "index.html": "/automaton-app/index.html",
-    "precache-manifest.ada039d0a7de4db34fcdefd04bfbe2da.js": "/automaton-app/precache-manifest.ada039d0a7de4db34fcdefd04bfbe2da.js",
+    "precache-manifest.a6e00f193962796d1586c39860847695.js": "/automaton-app/precache-manifest.a6e00f193962796d1586c39860847695.js",
     "service-worker.js": "/automaton-app/service-worker.js",
-    "static/css/main.494c1650.chunk.css.map": "/automaton-app/static/css/main.494c1650.chunk.css.map",
-    "static/js/2.98248638.chunk.js.LICENSE.txt": "/automaton-app/static/js/2.98248638.chunk.js.LICENSE.txt"
+    "static/css/main.34fc1070.chunk.css.map": "/automaton-app/static/css/main.34fc1070.chunk.css.map",
+    "static/js/2.612274d4.chunk.js.LICENSE.txt": "/automaton-app/static/js/2.612274d4.chunk.js.LICENSE.txt",
+    "static/media/auto_door.png": "/automaton-app/static/media/auto_door.3d65e9c9.png",
+    "static/media/automaton.png": "/automaton-app/static/media/automaton.3f0095c8.png",
+    "static/media/automaton_101.gif": "/automaton-app/static/media/automaton_101.22449837.gif",
+    "static/media/change_state.gif": "/automaton-app/static/media/change_state.ec6ff9be.gif",
+    "static/media/create_transition.gif": "/automaton-app/static/media/create_transition.6c30c740.gif",
+    "static/media/delete_state.gif": "/automaton-app/static/media/delete_state.64cfd081.gif",
+    "static/media/delete_transition.gif": "/automaton-app/static/media/delete_transition.407e87a5.gif",
+    "static/media/duplicate_label.png": "/automaton-app/static/media/duplicate_label.cb94b5b6.png",
+    "static/media/elevator.png": "/automaton-app/static/media/elevator.7d887b61.png",
+    "static/media/input_transition_label.gif": "/automaton-app/static/media/input_transition_label.bbd1426a.gif",
+    "static/media/multi_lable.png": "/automaton-app/static/media/multi_lable.fe5f234b.png",
+    "static/media/no_label.png": "/automaton-app/static/media/no_label.b0350579.png",
+    "static/media/play.gif": "/automaton-app/static/media/play.fe2c5e96.gif",
+    "static/media/play_screen_structure.png": "/automaton-app/static/media/play_screen_structure.bd51a445.png"
   },
   "entrypoints": [
     "static/js/runtime-main.e1c7bbe9.js",
-    "static/js/2.98248638.chunk.js",
-    "static/css/main.494c1650.chunk.css",
-    "static/js/main.45d453f5.chunk.js"
+    "static/js/2.612274d4.chunk.js",
+    "static/css/main.34fc1070.chunk.css",
+    "static/js/main.66f944ee.chunk.js"
   ]
 }
