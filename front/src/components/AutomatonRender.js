@@ -5,8 +5,8 @@ import Transition from "./Transition";
 import State from "./State";
 import ContextMenu from "./ContextMenu";
 import SvgBase from "./SvgBase";
-import ClearEffect from "./ClearEffect";
-import * as d3 from "d3";
+import * as Constant from "../constant";
+
 
 function AutomatonRender(props) {
 
@@ -131,6 +131,10 @@ function AutomatonRender(props) {
   const clickSvg = ({x, y}) => {
     if (contextMenuInfo.show) {
       setContextMenuInfo(DEFAULT_CONTEXT_MENU_INFO);
+      return;
+    }
+    // 状態の個数が最大値の場合、状態を追加しない
+    if (props.states.length >= Constant.MAX_STATE_LENGTH) {
       return;
     }
     let states = props.states.concat(

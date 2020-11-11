@@ -13,12 +13,28 @@ const messages = {
         },
       },
       home: {
+        title: 'トップ',
         welcomeTitle: 'ようこそ！『恋するオートマトン♭』へ！！',
         welcomeMessage: `<p>当サイトでは、楽しみながらオートマトンをつくることができます</p>
                          <p>初めて訪れる方は、「オートマトンとは」から読んでみてください</p>`,
         aboutAutomaton: 'オートマトンとは',
         howToPlay: 'プレイ方法',
         questionPrefix: 'レベル',
+      },
+      play: {
+        title: 'プレイ'
+      },
+      aboutAutomaton: {
+        title: 'オートマトンとは'
+      },
+      playGuide: {
+        title: 'プレイ方法'
+      },
+      privacyPolicy: {
+        title: 'プライバシーポリシー'
+      },
+      termOfService: {
+        title: '利用規約'
       },
       contextMenu: {
         change: '変更',
@@ -40,6 +56,7 @@ const messages = {
       sequenceNav: {
         acceptingString: '受理する文字列',
         notAcceptingString: '拒否する文字列',
+        emptyString: '空文字',
       },
       common: {
         ok: 'OK',
@@ -52,7 +69,7 @@ const messages = {
         nextQuestion: '次の問題に進む'
       },
       loginDialog: {
-        title: '外部システムと連携してログイン',
+        title: '外部サービスと連携してログイン',
         content: '以下の機能が利用できます。<br/>・作成したオートマトンの保存<br/> ・クリア履歴の保存',
         loginWithGoogle: 'Googleアカウントでログイン',
         loginWithTwitter: 'Twitterアカウントでログイン'

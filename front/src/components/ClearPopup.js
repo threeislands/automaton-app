@@ -18,7 +18,7 @@ function ClearPopup(props) {
 
   const onNextButtonClick = () => {
     props.setOpen(false);
-    history.push(`/play/${props.questionId + 1}`);
+    history.push(`/play/${Number(props.questionId) + 1}`);
   }
 
   return (
@@ -34,7 +34,7 @@ function ClearPopup(props) {
             {t('common.close')}
           </Button>
           <Button onClick={onNextButtonClick} variant="contained" color="primary"
-                disabled={props.questionId > Constant.QUESTION_SIZE}>
+                disabled={Number(props.questionId) > Constant.QUESTION_SIZE}>
             {t('clearPopup.nextQuestion')}
           </Button>
         </DialogActions>

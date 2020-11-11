@@ -87,7 +87,6 @@ function Animation(props) {
     });
 
     return () => {
-      console.log(timeoutList)
       // タイマーをすべてクリア
       timeoutList.forEach(t => clearTimeout(t));
       // 再生中のシーケンスの状態を通常に更新
@@ -138,7 +137,7 @@ function Animation(props) {
             /*className={failed && style.failed}*/>
             {renderFailureAnimation()}
           </circle>
-          <text className={style.pointerText} dx={-6} dy={6} stroke="white">{input}</text>
+          <text className={style.pointerText} dx={-7} dy={7} stroke="white">{input}</text>
           <animateMotion ref={animateMotionRef} dur={`${Constant.AUTOMATON_ANIMATION_DURATION + 0.01}s`}
                          repeatCount="1" styles={{display: 'none'}}>
             <mpath xlinkHref={"#" + targetId}></mpath>

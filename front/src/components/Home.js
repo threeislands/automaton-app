@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Link, useHistory} from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
@@ -9,6 +9,7 @@ import * as R from "ramda";
 import * as style from "./Home.module.scss";
 import Button from "@material-ui/core/Button";
 import {Trans, useTranslation} from "react-i18next";
+import * as Constant from "../constant";
 
 
 function Home() {
@@ -27,6 +28,12 @@ function Home() {
     {iconClass: 'fas fa-fighter-jet'},
     {iconClass: 'fas fa-robot'},
   ];
+
+  useEffect(() => {
+    document.title = t('home.title');
+    window.gtag('config', Constant.REACT_APP_GATAG_ID);
+  }, []);
+
 
   const PassedStatusIcon = props => {
     let statusIcon = props.passed ? 'fas' : 'far';

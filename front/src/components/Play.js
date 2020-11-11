@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import * as style from "./Play.module.css";
 import SequenceNav from "./SequenceNav";
 import QuestionArea from "./QuestionArea";
 import ActionBar from "./ActionBar";
@@ -13,13 +12,15 @@ import UserContext from "../context/UserContext";
 import * as Constant from "../constant";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import {merge, mergeRight} from "ramda";
 import ClearPopup from "./ClearPopup";
-
+import {useTranslation} from "react-i18next";
+import {useHistory} from "react-router-dom";
 
 function Play(props) {
 
+  const {t, i18n} = useTranslation();
   const user = React.useContext(UserContext);
+  const history = useHistory();
 
   const questionId = props.match.params.questionId;
   const [sequences, setSequences] = useState([]);
@@ -44,11 +45,23 @@ function Play(props) {
   const [clearPopupOpen, setClearPopupOpen] = useState(false);
 
   useEffect(() => {
-    const questionData = async () => {
+    // 不正なquestionIdの場合、トップ画面に遷移する
+    if (Number.isNaN(Number.parseInt(questionId)) ||
+      !R.range(1, Constant.QUESTION_SIZE + 1).includes(Number(questionId))) {
+      history.push('/');
+      return;
+    }
+    const getQuestionData = async () => {
       const data = await QuestionService.getQuestion(questionId);
       setSequences(R.map(s => R.mergeLeft(s, {status: 'normal'}))(data.sequences));
       setQuestionData(data);
 
+      // // オートマトンデータを初期化
+      setTransitions([]);
+      setStates(INITIAL_STATES);
+      setCount(INITIAL_COUNT);
+
+      // ログイン済みで、オートマトンのデータを保存済みの場合、初期値に設定する
       if (user) {
         let automatonData = await UserService.loadAutomaton(questionId);
         if (automatonData) {
@@ -57,9 +70,10 @@ function Play(props) {
           setCount(automatonData.count);
         }
       }
-      console.log(data)
+      document.title = `${t('play.title')} (${data.title})`;
+      window.gtag('config', Constant.REACT_APP_GATAG_ID);
     }
-    questionData();
+    getQuestionData();
   }, [questionId, user]);
 
   const testAutomaton = async () => {
@@ -71,7 +85,7 @@ function Play(props) {
     // 入力文字列の実行結果を初期化
     setSequenceStatusList(sequences.map(s => Object({id: s.id, status: 'none'})));
     setAnimationTarget(data);
-    setAnimationStart(  true);
+    setAnimationStart(true);
   }
 
   const cancelTest = () => {
@@ -103,7 +117,7 @@ function Play(props) {
 
   return (
     <div style={{maxWidth: '1000px', margin: '0.5px auto 0px', padding: "15px 0px 20px"}}>
-      <QuestionArea questionText={questionData.questionText}
+      <QuestionArea questionText={questionData.questionText} title={questionData.title}
                     allowInputs={questionData.allowInputs}/>
       <Grid container spacing={2}>
         <Grid item sm={3}>

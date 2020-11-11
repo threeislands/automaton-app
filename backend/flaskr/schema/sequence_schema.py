@@ -11,3 +11,4 @@ class SequenceSchema(SQLAlchemySchema):
     id = auto_field()
     value = auto_field()
     accept = auto_field()
+    masked = auto_field()

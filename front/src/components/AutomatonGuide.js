@@ -7,15 +7,22 @@ import AutoDoorImage from "../images/auto_door.png"
 import M1_101Gif from "../images/automaton_101.gif"
 import NoLabelImage from "../images/no_label.png"
 import DuplicateLabelImage from "../images/duplicate_label.png"
-import MultiLabelImage from "../images/multi_lable.png"
+import MultiLabelImage from "../images/multi_label.png"
 import {useHistory} from "react-router-dom";
 import * as style from "./AutomatonGuide.module.scss";
 import Button from "@material-ui/core/Button";
+import {useEffect} from "react";
+import * as Constant from "../constant";
 
 function AutomatonGuide(props) {
 
   const {t, i18n} = useTranslation()
   const history = useHistory();
+
+  useEffect(() => {
+    document.title = t('aboutAutomaton.title');
+    window.gtag('config', Constant.REACT_APP_GATAG_ID);
+  }, []);
 
   const String = (props) => {
     return <span className={style.string}> {props.children} </span>

@@ -22,7 +22,7 @@ def get_session():
     return make_response(jsonify({'state': state}))
 
 
-@bp.route('/redirect-url')
+@bp.route('/google_openid_connect_redirect_uri')
 def redirect_user():
 
     if request.args.get('state') != session['state']:
@@ -73,7 +73,7 @@ def get_twitter_token():
     return res
 
 
-@bp.route('/oauth/redirect/twitter')
+@bp.route('/twitter_oauth_redirect_uri')
 def redirect_twitter():
 
     args = request.args

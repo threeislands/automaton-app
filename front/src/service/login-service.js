@@ -18,20 +18,20 @@ export function getGoogleAuthorizationUrl(state) {
 export async function getState() {
   try {
     const res = await baseApi.get(`/get_state`);
-    console.log(res)
+    console.debug(res)
     return res.data;
   } catch (error) {
-    console.log(error);
+    console.debug(error);
   }
 }
 
 export async function getTwitterToken() {
   try {
     const res = await baseApi.get(`/get/twitter_token`);
-    console.log(res)
+    console.debug(res)
     return res.data;
   } catch (error) {
-    console.log(error);
+    console.debug(error);
   }
 }
 
@@ -43,7 +43,7 @@ export function getTwitterAuthorizationUrl(token) {
     let url = `${Constant.REACT_APP_TWITTER_OAUTH_ENDPOINT}?${params.toString()}`;
     return url;
   } catch (error) {
-    console.log(error);
+    console.debug(error);
   }
 }
 

@@ -13,12 +13,19 @@ import Grid from "@material-ui/core/Grid";
 import * as style from "./PlayGuide.module.scss";
 import Button from "@material-ui/core/Button";
 import {useHistory} from "react-router-dom";
+import {useEffect} from "react";
+import * as Constant from "../constant";
 
 
 function PlayGuide(props) {
 
   const history = useHistory();
   const {t, i18n} = useTranslation();
+
+  useEffect(() => {
+    document.title = t('playGuide.title');
+    window.gtag('config', Constant.REACT_APP_GATAG_ID);
+  }, []);
 
   return (
     <Grid container style={{maxWidth: '1000px', margin: '0.5px auto 0px'}}>
@@ -50,6 +57,8 @@ function PlayGuide(props) {
               &#9313;<b>入力文字列</b><br/>
               「受理する文字列」と「拒否する文字列」の一覧がそれぞれ表示されます。<br/>
               回答ボタンをクリックしたときに、この字列を作成したオートマトンに入力します。<br/>
+              長さが0の文字列は、「空文字」と表示されます。<br/>
+              また、難易度が高くなるにつれ、文字列はマスキングして表示されます。
             </li>
             <br/>
             <li>
@@ -94,7 +103,7 @@ function PlayGuide(props) {
               </li>
             </ul>
             を確認していきます。<br/>
-            ※入力文字列を確認せずに、お題の情報だけでオートマトンを作成することが可能です。
+            ※また、オートマトンは、お題の情報だけで作成可能です。
           </li>
           <li>
             オートマトンの作成<br/>
@@ -122,6 +131,7 @@ function PlayGuide(props) {
           <li>
             <b>状態を追加する</b><br/>
             任意のクリックした場所に、状態が作成されます。<br/>
+            <b>※プレイ画面で、作成できる状態は6個までです。</b><br/>
             <img src={CreateStateGif} alt=""/>
           </li>
           <li>

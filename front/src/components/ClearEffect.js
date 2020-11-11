@@ -36,7 +36,6 @@ function ClearEffect(props) {
     let animationOpacity2Dur = Constant.AUTOMATON_ANIMATION_DURATION * 1 / 2 + 's';
 
     let animateMotionDur = Constant.AUTOMATON_ANIMATION_DURATION + 's';
-    console.log(tx + "," + ty);
     return (
       <g>
         <path d="M-5 -30 L0 0 L5 -30 Z" fill={props.color}></path>
@@ -79,7 +78,7 @@ function ClearEffect(props) {
         //     color = "#FFF100";
         //     break;
         // }
-        return <Drop angle={n * perAngle} x={props.x} y={props.y} color={"#ff1464"}/>;
+        return <Drop key={index} angle={n * perAngle} x={props.x} y={props.y} color={"#ff1464"}/>;
       })}
     </>
   );

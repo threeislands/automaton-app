@@ -7,6 +7,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import List from "@material-ui/core/List";
 import Paper from "@material-ui/core/Paper";
 import {prop} from "ramda";
+import * as R from "ramda";
 
 function SequenceNav(props) {
 
@@ -15,12 +16,13 @@ function SequenceNav(props) {
   const renderAcceptList = () => {
     return props.sequenceList.filter(s => s.accept).map(s => {
       let styles = getStyle(s.id);
+      let displayValue = getDisplayValue(s.id);
       return (
         <ListItem key={s.value} dense className={styles.className}>
           <ListItemIcon>
             <i className={styles.icon}></i>
           </ListItemIcon>
-          <ListItemText id={s.id} primary={s.value}/>
+          <ListItemText id={s.id} primary={displayValue}/>
         </ListItem>
       );
     })
@@ -29,12 +31,13 @@ function SequenceNav(props) {
   const renderRejectList = () => {
     return props.sequenceList.filter(s => !s.accept).map(s => {
       let styles = getStyle(s.id);
+      let displayValue = getDisplayValue(s.id);
       return (
         <ListItem key={s.value} role={undefined} dense className={styles.className}>
           <ListItemIcon>
             <i className={styles.icon}></i>
           </ListItemIcon>
-          <ListItemText id={s.id} primary={s.value}/>
+          <ListItemText id={s.id} primary={displayValue}/>
         </ListItem>
       );
     })
@@ -59,6 +62,25 @@ function SequenceNav(props) {
       };
     } else {
       return {icon: 'far fa-circle', className: ''};
+    }
+  }
+
+  const getDisplayValue = (id) => {
+    let s = props.sequenceList.find(s => s.id === id);
+    let ss = props.sequenceStatusList.find(ss => ss.id === id);
+
+    if (s.masked === true && (!ss || ss.status === 'none')) {
+      if (s.value === '') {
+        return '???';
+      } else {
+        return R.join('', R.repeat('?', s.value.length));
+      }
+    } else {
+      if (s.value === '') {
+        return t('sequenceNav.emptyString');
+      } else {
+        return s.value;
+      }
     }
   }
 

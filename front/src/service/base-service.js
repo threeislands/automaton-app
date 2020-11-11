@@ -1,9 +1,9 @@
 import axiosBase from 'axios';
-import * as constant from '../constant';
+import * as Constant from '../constant';
 
 
 export default axiosBase.create({
-  baseURL:constant.API_ENDPOINT,
+  baseURL:Constant.API_ENDPOINT,
   headers: {
     'Content-Type': 'application/json',
   },

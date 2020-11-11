@@ -12,4 +12,5 @@ class Sequence(BaseModel):
     question_id = Column(INT, ForeignKey('question.id'))
     value = Column(String(100))
     accept = Column(Boolean)
+    masked = Column(Boolean)
     display_order = Column(INT)
