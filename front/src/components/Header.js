@@ -108,7 +108,7 @@ function Header(props) {
     window.location.reload(false);
   }
 
-  let profileArea = user ? UserProfile : LoginButton;
+  let profileArea = user && user.id ? UserProfile : LoginButton;
 
   return (
     <Container maxWidth="lg" style={{padding: '0px', background: 'hotpink'}}>
