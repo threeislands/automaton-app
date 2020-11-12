@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import * as style from "./Footer.module.scss";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import * as Constant from '../constant';
 
 
@@ -13,6 +13,8 @@ function Footer(props) {
   const user = React.useContext(UserContext);
   const {t, i18n} = useTranslation();
 
+  const history = useHistory();
+
   return (
     <Container maxWidth="lg" style={{padding: '20px 0px 15px', background: '#F3F3F6'}}>
       <Grid container
@@ -20,12 +22,12 @@ function Footer(props) {
         <Grid item sm={4} style={{textAlign: 'left'}}>
           <p className={style.footerListTitle}>{t('footer.aboutLovingAutomaton')}</p>
           <ul className={style.footerList}>
-            <li><Link to="/term_of_service" className={style.footerLink}>
+            <li><Link to="/terms_of_service" className={style.footerLink}>
               {t('footer.termOfService')}
             </Link></li>
-            <li><a href="/privacy_policy" className={style.footerLink}>
+            <li><Link to="/privacy_policy" className={style.footerLink}>
               {t('footer.privacyPolicy')}
-            </a></li>
+            </Link></li>
             <li><a href={`mailto:${Constant.CONTACT_EMAIL}`} className={style.footerLink}>
               {t('footer.contactUs')}
             </a></li>
@@ -36,7 +38,8 @@ function Footer(props) {
             {t('footer.watchSource')}
           </p>
           <ul className={style.footerList}>
-            <li><a href={Constant.GIT_REPOSITORY_URL} target="_blank" className={style.footerLink}>{t('footer.sourceHere')}</a></li>
+            <li><a href={Constant.GIT_REPOSITORY_URL} target="_blank"
+                   className={style.footerLink}>{t('footer.sourceHere')}</a></li>
           </ul>
         </Grid>
         <Grid item sm={4} style={{textAlign: 'right', margin: 'auto 0 0 auto'}}>

@@ -12,7 +12,7 @@ import AutomatonGuide from "./components/AutomatonGuide";
 import PlayGuide from "./components/PlayGuide";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Footer from "./components/Footer";
-import TermOfService from "./components/TermOfService";
+import TermsOfService from "./components/TermsOfService";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
                   <Route path="/play/:questionId" component={Play}/>
                   <Route path="/automaton_guide" component={AutomatonGuide}/>
                   <Route path="/play_guide" component={PlayGuide}/>
-                  <Route path="/term_of_service" component={TermOfService}/>
+                  <Route path="/terms_of_service" component={TermsOfService}/>
                   <Route path="/privacy_policy" component={PrivacyPolicy}/>
                   <Route path="/" component={Home}/>
                 </Switch>

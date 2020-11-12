@@ -56,6 +56,7 @@ function Animation(props) {
       await new Promise(resolve => {
         let stateId = R.last(props.animationTarget[tsIndex].stateOrderList);
         const t1 = setTimeout(() => {
+          animateMotionDom.endElement();
           let state = props.states.find(s => s.id === stateId);
           setPos({x: state.x, y: state.y});
         }, Constant.AUTOMATON_ANIMATION_DURATION * 1000);
@@ -138,7 +139,7 @@ function Animation(props) {
             {renderFailureAnimation()}
           </circle>
           <text className={style.pointerText} dx={-7} dy={7} stroke="white">{input}</text>
-          <animateMotion ref={animateMotionRef} dur={`${Constant.AUTOMATON_ANIMATION_DURATION + 0.01}s`}
+          <animateMotion ref={animateMotionRef} dur={`${Constant.AUTOMATON_ANIMATION_DURATION + 0.02}s`}
                          repeatCount="1" styles={{display: 'none'}}>
             <mpath xlinkHref={"#" + targetId}></mpath>
           </animateMotion>

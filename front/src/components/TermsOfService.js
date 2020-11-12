@@ -5,7 +5,7 @@ import {useHistory} from "react-router-dom";
 import {useEffect} from "react";
 import * as Constant from "../constant";
 
-function TermOfService(props) {
+function TermsOfService(props) {
 
   const {t, i18n} = useTranslation()
   const history = useHistory();
@@ -25,4 +25,4 @@ function TermOfService(props) {
 
 }
 
-export default TermOfService;
+export default TermsOfService;
