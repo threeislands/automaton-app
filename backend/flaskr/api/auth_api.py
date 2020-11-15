@@ -26,7 +26,7 @@ def get_session():
 def redirect_user():
 
     if request.args.get('state') != session['state']:
-        return 'error'
+        return redirect(current_app.config['FRONT_APP_DEFAULT_URL'], code='302')
 
     code = request.args.get('code')
     body = {

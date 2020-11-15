@@ -15,8 +15,11 @@ bp = Blueprint('user', __name__, )  # url_prefix='/public')
 
 
 @bp.route('/user/current_user', methods=['GET'])
-@authentication_required
 def get_current_user():
+
+    if session.get('user_id') is None:
+        return make_response(jsonify({}))
+
     user_id = session.get('user_id')
 
     user = UserService.find_by_id(user_id)

@@ -17,7 +17,7 @@ export function getGoogleAuthorizationUrl(state) {
 
 export async function getState() {
   try {
-    const res = await baseApi.get(`/get_state`);
+    const res = await baseApi.get(`/get_state`)
     console.debug(res)
     return res.data;
   } catch (error) {
