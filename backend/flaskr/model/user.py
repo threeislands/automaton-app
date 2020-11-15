@@ -11,5 +11,6 @@ class User(BaseModel):
 
     id = Column(INT, primary_key=True, autoincrement=True)
     display_name = Column(String(10))
-    external_identifier = Column(String(300), unique=True)
+    external_identifier = Column(String(300))
+    external_auth_code = Column(String(2))
     test_result_list = relationship(TestResult, backref='user')

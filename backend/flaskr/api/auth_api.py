@@ -45,11 +45,14 @@ def redirect_user():
     external_identifier = payload['sub']
     display_name = payload['name']
 
-    user = UserService.find_by_user_identifier(external_identifier)
+    google_auth_code = current_app.config['GOOGLE_AUTH_CODE']
+    user = UserService.find_by_user_identifier_and_external_auth_code(
+        external_identifier, google_auth_code)
 
     if user is None:
         new_user = User(external_identifier=external_identifier,
-                        display_name=display_name)
+                        display_name=display_name,
+                        external_auth_code=google_auth_code)
         UserService.create(new_user)
         session['user_id'] = new_user.id
     else:
@@ -93,14 +96,17 @@ def redirect_twitter():
     qs = parse_qs(con)
     twitter_user_id = qs['user_id'][0]
 
-    user = UserService.find_by_user_identifier(twitter_user_id)
+    twitter_auth_code = current_app.config['TWITTER_AUTH_CODE']
+    user = UserService.find_by_user_identifier_and_external_auth_code(
+        twitter_user_id, twitter_auth_code)
 
     if user is None:
-        user_info = twitter.get(current_app.config['TWITTER_SHOW_USERS_ENDPOINT'], params ={
+        user_info = twitter.get(current_app.config['TWITTER_SHOW_USERS_ENDPOINT'], params={
             'user_id': twitter_user_id
         })
         new_user = User(external_identifier=twitter_user_id,
-                        display_name=user_info.json()['name'])
+                        display_name=user_info.json()['name'],
+                        external_auth_code=twitter_auth_code)
         UserService.create(new_user)
         session['user_id'] = new_user.id
     else:
