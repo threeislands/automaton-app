@@ -97,24 +97,26 @@ function AutomatonGuide(props) {
         </ul>
         <p>
           このオートマトンの動きを確認してみましょう。<br/>
-          <String>1F</String>から開始して、<String>3</String><String>1</String><String>2</String>の順番でボタンを押した場合を想定してみます。<br/>
-          <ol className={style.list}>
-            <li>
-              <String>1F</String>から開始します。
-            </li>
-            <li>
-              <String>3</String>が入力されました。<br/>
-              <String>1F</String>から<String>3F</String>への矢印のラベルに<String>3</String>が表示されているので、<String>3F</String>に移動します。
-            </li>
-            <li>
-              <String>1</String>が入力されました。<br/>
-              <String>3F</String>から<String>1F</String>への矢印のラベルに<String>1</String>が表示されているので、<String>1F</String>に移動します。
-            </li>
-            <li>
-              <String>2</String>が入力されました。<br/>
-              <String>1F</String>から<String>2F</String>への矢印のラベルに<String>2</String>が表示されているので、<String>2F</String>に移動します。
-            </li>
-          </ol>
+        </p>
+        <String>1F</String>から開始して、<String>3</String><String>1</String><String>2</String>の順番でボタンを押した場合を想定してみます。<br/>
+        <ol className={style.list}>
+          <li>
+            <String>1F</String>から開始します。
+          </li>
+          <li>
+            <String>3</String>が入力されました。<br/>
+            <String>1F</String>から<String>3F</String>への矢印のラベルに<String>3</String>が表示されているので、<String>3F</String>に移動します。
+          </li>
+          <li>
+            <String>1</String>が入力されました。<br/>
+            <String>3F</String>から<String>1F</String>への矢印のラベルに<String>1</String>が表示されているので、<String>1F</String>に移動します。
+          </li>
+          <li>
+            <String>2</String>が入力されました。<br/>
+            <String>1F</String>から<String>2F</String>への矢印のラベルに<String>2</String>が表示されているので、<String>2F</String>に移動します。
+          </li>
+        </ol>
+        <p>
           オートマトンでエレベーターの動作を表現できていますね！<br/>
           今回の例は状態と入力信号が１対１で対応してるので、利点がわかりにくかったかもしれません。<br/>
         </p>
@@ -178,10 +180,12 @@ function AutomatonGuide(props) {
         <p>
           有限オートマトンは<b>状態</b>と<b>アルファベット</b>、<b>遷移</b>から構成されています。<br/>
           これまで説明してきたオートマトンとの大きな違いは、以下の２点です。<br/>
-          <ul>
-            <li>状態は、"受理状態"と"そうでない状態"の２種類しかない</li>
-            <li>入力の集合の呼び方が"入力信号"→"アルファベット"になった</li>
-          </ul>
+        </p>
+        <ul>
+          <li>状態は、"受理状態"と"そうでない状態"の２種類しかない</li>
+          <li>入力の集合の呼び方が"入力信号"→"アルファベット"になった</li>
+        </ul>
+        <p>
           それぞれ順にみていきます。
         </p>
 
@@ -197,7 +201,7 @@ function AutomatonGuide(props) {
           <li>
             <b>アルファベット</b><br/>
             入力される文字の集合です。<br/>
-            ※ここでいうアルファベットは、ローマ字のアルファベットのことではありません。<br/>
+            <b>※ここでいうアルファベットは、ローマ字のアルファベットのことではありません。</b><br/>
             オートマトンM<sub>1</sub>では、{'{'}<String>0</String>,<String>1</String>{'}'}です。
           </li>
           <li>
@@ -211,20 +215,20 @@ function AutomatonGuide(props) {
 
         <p>
           まず、以下の用語について説明します。
-          <ul className={style.list}>
-            <li>
-              入力文字列<br/>
-              アルファベットの文字を組み合わせた文字列で、これをオートマトンに入力します。<br/>
-              例）アルファベットが {'{'}<String>0</String>,<String>1</String>,<String>2</String>{'}'} の場合の入力文字列<br/>
-              <String>1012</String>,<String>1</String>,<String>0002</String>,<String>1111</String>,<String>1011</String>,<String>1002</String>,<String>2210</String>,
-              ...
-            </li>
-            <li>
-              読み出す<br/>
-              入力文字列を左から１文字取り出して、オートマトンに入力することを意味します。
-            </li>
-          </ul>
         </p>
+        <ul className={style.list}>
+          <li>
+            入力文字列<br/>
+            アルファベットの文字を組み合わせた文字列で、これをオートマトンに入力します。<br/>
+            例）アルファベットが {'{'}<String>0</String>,<String>1</String>,<String>2</String>{'}'} の場合の入力文字列<br/>
+            <String>1012</String>,<String>1</String>,<String>0002</String>,<String>1111</String>,<String>1011</String>,<String>1002</String>,<String>2210</String>,
+            ...
+          </li>
+          <li>
+            読み出す<br/>
+            入力文字列を左から１文字取り出して、オートマトンに入力することを意味します。
+          </li>
+        </ul>
         <p>
           早速、有限オートマトンの動きをみていきましょう。<br/>
           開始状態から、入力文字列を1文字読み出して、その文字をラベルとする遷移に従って次の状態に移動します。<br/>
@@ -238,29 +242,29 @@ function AutomatonGuide(props) {
         </p>
         <p>
           オートマトンM<sub>1</sub>に<String>101</String>を入力した場合<br/>
-          <ol className={style.list}>
-            <img src={M1_101Gif} alt=""/>
-            <li>
-              <String>A</String>から開始します。
-            </li>
-            <li>
-              入力文字列(<String>101</String>)の左から1文字目(<String>1</String>)を読み出します。<br/>
-              <String>A</String>から<String>B</String>の矢印のラベルに<String>1</String>が表示されているので、<String>B</String>へ移動します。
-            </li>
-            <li>
-              残り文字列(<String>01</String>)の左から1文字目(<String>0</String>)を読み出します。<br/>
-              <String>B</String>から<String>A</String>の矢印のラベルに<String>0</String>が表示されているので、<String>A</String>へ移動します。
-            </li>
-            <li>
-              残り文字列(<String>1</String>)の左から1文字目(<String>1</String>)を読み出します。<br/>
-              <String>A</String>から<String>B</String>の矢印のラベルに<String>1</String>が表示されているので、<String>B</String>へ移動します。
-            </li>
-            <li>
-              全ての入力文字列を読み終えました。<br/>
-              このとき、オートマトンM<sub>1</sub>は受理状態にあるので、<String>101</String>を受理します。
-            </li>
-          </ol>
         </p>
+        <ol className={style.list}>
+          <img src={M1_101Gif} alt=""/>
+          <li>
+            <String>A</String>から開始します。
+          </li>
+          <li>
+            入力文字列(<String>101</String>)の左から1文字目(<String>1</String>)を読み出します。<br/>
+            <String>A</String>から<String>B</String>の矢印のラベルに<String>1</String>が表示されているので、<String>B</String>へ移動します。
+          </li>
+          <li>
+            残り文字列(<String>01</String>)の左から1文字目(<String>0</String>)を読み出します。<br/>
+            <String>B</String>から<String>A</String>の矢印のラベルに<String>0</String>が表示されているので、<String>A</String>へ移動します。
+          </li>
+          <li>
+            残り文字列(<String>1</String>)の左から1文字目(<String>1</String>)を読み出します。<br/>
+            <String>A</String>から<String>B</String>の矢印のラベルに<String>1</String>が表示されているので、<String>B</String>へ移動します。
+          </li>
+          <li>
+            全ての入力文字列を読み終えました。<br/>
+            このとき、オートマトンM<sub>1</sub>は受理状態にあるので、<String>101</String>を受理します。
+          </li>
+        </ol>
 
         <p>
           有限オートマトンの動きがイメージできましたか？？<br/>
@@ -358,11 +362,15 @@ function AutomatonGuide(props) {
           <a href="https://www.kyoritsu-pub.co.jp/bookdetail/9784320122079" target="_blank">
             計算理論の基礎 [原著第2版] 1.オートマトンと言語</a>
         </p>
+        <p>
+          記載内容に誤りがありましたら、お問い合わせのメールアドレス宛にご連絡お願いいたします。
+        </p>
+
 
         <h2>プレイ方法について</h2>
         <p>
           このページでは、オートマトンについての紹介を行ってきました。<br/>
-          読み進めるのが大変だったと思います。お疲れさまでした。。。<br/>
+          読み進めるのが大変だったと思います。お疲れさまでした。。<br/>
         </p>
         <p>
           このサイトのプレイ方法はシンプルです。<br/>
@@ -370,18 +378,20 @@ function AutomatonGuide(props) {
           そのお題のオートマトンを実際につくってもらいます！<br/>
         </p>
         <p>
-          例えば以下のようなお題です。<br/>
-          <ul>
-            <li>
-              <String>0</String>から始まる文字列<br/>
-              アルファベット：{'{'}<String>0</String>,<String>1</String>{'}'}
-            </li>
-            <li>
-              <String>10</String>を含む文字列<br/>
-              アルファベット：{'{'}<String>0</String>,<String>1</String>,<String>2</String>{'}'}
-            </li>
-          </ul>
-          以下のリンクからくわしいプレイ方法をみていきましょう！<br/>
+          例えば以下のようなお題です。
+        </p>
+        <ul>
+          <li>
+            <String>0</String>から始まる文字列<br/>
+            アルファベット：{'{'}<String>0</String>,<String>1</String>{'}'}
+          </li>
+          <li>
+            <String>10</String>を含む文字列<br/>
+            アルファベット：{'{'}<String>0</String>,<String>1</String>,<String>2</String>{'}'}
+          </li>
+        </ul>
+        <p>
+          以下のリンクからくわしいプレイ方法をみていきましょう！
         </p>
         <Button onClick={() => history.push('/play_guide')} variant="outlined"
                 color="default">
@@ -390,7 +400,6 @@ function AutomatonGuide(props) {
       </Grid>
     </Grid>
   );
-
 }
 
 export default AutomatonGuide;
