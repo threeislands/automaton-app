@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./components/Header";
 import Home from "./components/Home";
 import * as UserService from "./service/user-service";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {HashRouter, Route, Switch} from "react-router-dom";
 import Play from "./components/Play";
 import LoginDialog from "./components/LoginDialog";
 import UserContext from "./context/UserContext";
@@ -33,9 +33,9 @@ function App() {
       <CssBaseline/>
       <Suspense fallback="loading">
         <UserContext.Provider value={user}>
-          <Router>
+          <HashRouter basename={process.env.PUBLIC_URL}>
             <Header setShowLoginModal={setShowLoginModal}/>
-            <Container id="app" style={{background: '#A8e4ff'}} maxWidth="lg">
+            <Container id="app" style={{background: '#BBeAff'}} maxWidth="lg">
               <LoginDialog open={showLoginModal} setOpen={setShowLoginModal}/>
               <div className="grid-x grid-margin-x">
                 <Switch>
@@ -49,7 +49,7 @@ function App() {
               </div>
             </Container>
             <Footer/>
-          </Router>
+          </HashRouter>
         </UserContext.Provider>
       </Suspense>
     </div>
