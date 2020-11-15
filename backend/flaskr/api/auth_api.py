@@ -42,7 +42,7 @@ def redirect_user():
     id_token = res_body['id_token']
     payload = jwt.decode(id_token, verify=False)
 
-    external_identifier = payload['aud']
+    external_identifier = payload['sub']
     display_name = payload['name']
 
     user = UserService.find_by_user_identifier(external_identifier)
