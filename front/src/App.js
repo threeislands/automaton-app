@@ -14,6 +14,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Footer from "./components/Footer";
 import TermsOfService from "./components/TermsOfService";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
             <Container id="app" style={{background: '#BBeAff'}} maxWidth="lg">
               <LoginDialog open={showLoginModal} setOpen={setShowLoginModal}/>
               <div className="grid-x grid-margin-x">
+                <ScrollToTop />
                 <Switch>
                   <Route path="/play/:questionId" component={Play}/>
                   <Route path="/automaton_guide" component={AutomatonGuide}/>
