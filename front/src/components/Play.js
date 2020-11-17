@@ -62,7 +62,7 @@ function Play(props) {
       setCount(INITIAL_COUNT);
 
       // ログイン済みで、オートマトンのデータを保存済みの場合、初期値に設定する
-      if (user) {
+      if (user && user.id) {
         let automatonData = await UserService.loadAutomaton(questionId);
         if (automatonData) {
           setStates(automatonData.states);
