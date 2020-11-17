@@ -21,6 +21,8 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_object(test_config)
 
+    app.config['APPLICATION_ROOT'] = '/api'
+
     db.init_app(app)
     migrate.init_app(app, db)
 
@@ -29,10 +31,8 @@ def create_app(test_config=None):
 
     from flaskr.api import test_api, auth_api, user_api, question_api
 
-    app.register_blueprint(test_api.bp)
-    app.register_blueprint(auth_api.bp)
-    app.register_blueprint(user_api.bp)
-    app.register_blueprint(question_api.bp)
+    for api in [test_api, auth_api, user_api, question_api]:
+        app.register_blueprint(api.bp, url_prefix=app.config['API_PREFIX'])
 
     @app.route('/health')
     def health_check():

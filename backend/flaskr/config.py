@@ -1,14 +1,12 @@
 """Flask config."""
 import os
-from dotenv import load_dotenv
-
-# load_dotenv()
 
 
 class Config:
     # Flask(App)
     SECRET_KEY = os.getenv('SECRET_KEY')
     SESSION_COOKIE_SAMESITE = 'Lax'
+    API_PREFIX = '/api'
     FRONT_APP_DEFAULT_URL = os.getenv('FRONT_APP_DEFAULT_URL')
     FRONT_APP_ORIGIN = os.getenv('FRONT_APP_ORIGIN')
     # Flask(DB)

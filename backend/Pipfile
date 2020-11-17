@@ -6,13 +6,13 @@ name = "pypi"
 [scripts]
 start = "python3 -m flask run"
 test = "pytest"
-db_init = "python3 -m flask db init"
-db_migrate = "python3 -m flask db migrate"
-db_upgrade = "python3 -m flask db upgrade"
+db_init = "python3 manage.py db init"
+db_migrate = "python3 manage.py db migrate"
+db_upgrade = "python3 manage.py db upgrade"
 db_import = "python3 manage.py import_data"
 
 [packages]
-certifi = ""
+certifi = "*"
 chardet = "*"
 click = "*"
 Flask = "*"
