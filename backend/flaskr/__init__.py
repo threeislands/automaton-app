@@ -21,8 +21,6 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_object(test_config)
 
-    app.config['APPLICATION_ROOT'] = '/api'
-
     db.init_app(app)
     migrate.init_app(app, db)
 
