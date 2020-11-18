@@ -82,11 +82,11 @@ function Home() {
       <Grid item sm={12}>
         <Grid container alignItems="center" justify="center" spacing={1}
               style={{
-                padding: '30px 16px 10px', background: 'white', borderRadius: '5px',
+                padding: '30px 14px 8px', background: 'white', borderRadius: '5px',
                 maxWidth: '1000px', margin: '0 auto 0 auto'
               }}>
           <Grid item sm={12} style={{textAlign: 'center'}}>
-            <div style={{maxWidth: '540px', margin: '20px auto 45px auto', textAlign: 'center'}}>
+            <div style={{maxWidth: '540px', margin: '20px auto 38px auto', textAlign: 'center'}}>
               <div>
                 <p style={{fontSize: '1.5rem'}}>{t('home.welcomeTitle')}</p>
                 <Trans i18nKey="home.welcomeMessage"/>
@@ -105,7 +105,7 @@ function Home() {
               {t('home.howToPlay')}
             </Button>
           </Grid>
-          <Grid container spacing={3} alignItems="center" style={{margin: '20px 0px 5px', padding: '5px 0px 0px'}}>
+          <Grid container spacing={3} alignItems="center" style={{margin: '28px 0px 5px', padding: '5px 0px 0px'}}>
             {questionList}
           </Grid>
         </Grid>
