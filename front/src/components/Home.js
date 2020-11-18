@@ -82,7 +82,7 @@ function Home() {
       <Grid item sm={12}>
         <Grid container alignItems="center" justify="center" spacing={1}
               style={{
-                paddingTop: '30px', background: 'white', borderRadius: '5px',
+                padding: '30px 16px 10px', background: 'white', borderRadius: '5px',
                 maxWidth: '1000px', margin: '0 auto 0 auto'
               }}>
           <Grid item sm={12} style={{textAlign: 'center'}}>
@@ -105,7 +105,7 @@ function Home() {
               {t('home.howToPlay')}
             </Button>
           </Grid>
-          <Grid container spacing={4} alignItems="center" style={{margin: '20px 0px 5px', padding: '5px 0px 0px'}}>
+          <Grid container spacing={3} alignItems="center" style={{margin: '20px 0px 5px', padding: '5px 0px 0px'}}>
             {questionList}
           </Grid>
         </Grid>
