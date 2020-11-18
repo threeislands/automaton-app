@@ -6,6 +6,7 @@ class Config:
     # Flask(App)
     SECRET_KEY = os.getenv('SECRET_KEY')
     SESSION_COOKIE_SAMESITE = 'Lax'
+    SESSION_COOKIE_SECURE = True if os.getenv('SESSION_COOKIE_SECURE') == 'true' else False
     API_PREFIX = '/api'
     FRONT_APP_DEFAULT_URL = os.getenv('FRONT_APP_DEFAULT_URL')
     FRONT_APP_ORIGIN = os.getenv('FRONT_APP_ORIGIN')
