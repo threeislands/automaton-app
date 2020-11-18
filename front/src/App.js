@@ -25,7 +25,7 @@ function App() {
     const api = async () => {
       const user = await UserService.getUser();
       // ユーザ情報を取得できない(未ログイン)の場合、空のobjectが返却されるのでnullを設定
-      if (Object.keys(user).length === 0) {
+      if (!user || Object.keys(user).length === 0) {
         setUser(null);
       } else {
         setUser(user);
