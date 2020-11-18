@@ -18,13 +18,18 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(() => {
     const api = async () => {
       const user = await UserService.getUser();
-      setUser(user);
+      // ユーザ情報を取得できない(未ログイン)の場合、空のobjectが返却されるのでnullを設定
+      if (Object.keys(user).length === 0) {
+        setUser(null);
+      } else {
+        setUser(user);
+      }
     }
     api();
   }, []);
