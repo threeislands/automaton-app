@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "22cc6fedd5c6fc913a7b679f06f4adbf",
+    "revision": "9b58a14c8b601e9a38f454a3e16d32ca",
     "url": "/automaton-app/index.html"
   },
   {
-    "revision": "d3a9fccc5f7afc77ad70",
+    "revision": "18f415a7c0d31f408fd1",
     "url": "/automaton-app/static/css/main.9947ac5e.chunk.css"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/automaton-app/static/js/2.db484e80.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d3a9fccc5f7afc77ad70",
-    "url": "/automaton-app/static/js/main.3a6e5f02.chunk.js"
+    "revision": "18f415a7c0d31f408fd1",
+    "url": "/automaton-app/static/js/main.68843c4b.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/automaton-app/static/js/main.3a6e5f02.chunk.js.LICENSE.txt"
+    "url": "/automaton-app/static/js/main.68843c4b.chunk.js.LICENSE.txt"
   },
   {
     "revision": "45b803e66a72bcc4fdb5",
