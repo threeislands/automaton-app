@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9b58a14c8b601e9a38f454a3e16d32ca",
+    "revision": "cc12b637f1d568005687e8d51b8b77d5",
     "url": "/automaton-app/index.html"
   },
   {

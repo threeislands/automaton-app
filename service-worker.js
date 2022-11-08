@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/automaton-app/precache-manifest.3828cb3de3617fd00f541ffc68271405.js"
+  "/automaton-app/precache-manifest.f1542e92837225263c7ebfcb40d6c3e4.js"
 );
 
 self.addEventListener('message', (event) => {
