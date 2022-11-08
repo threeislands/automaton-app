@@ -1,7 +1,7 @@
 {
   "name": "front",
   "version": "0.1.0",
-  "homepage": "`http://threeislands.github.io`",
+  "homepage": "http://threeislands.github.io/automaton-app",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
