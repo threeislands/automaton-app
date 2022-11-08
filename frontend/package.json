@@ -1,7 +1,7 @@
 {
   "name": "front",
   "version": "0.1.0",
-  "homepage": "http://threeislands.github.io",
+  "homepage": "`http://threeislands.github.io`",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -15,13 +15,14 @@
     "d3-selection": "^2.0.0",
     "dotenv": "^8.2.0",
     "i18next": "^19.8.2",
-    "node-sass": "^4.14.1",
     "ramda": "^0.27.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "sass": "^1.56.0",
+    "sass-loader": "^13.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
