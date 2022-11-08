@@ -123,7 +123,6 @@ function Header(props) {
           </div>
         </Grid>
         <Grid item sm={3} style={{'textAlign': 'center', paddingRight: '20px'}}>
-          {profileArea()}
           {ProfileMenu()}
           {RemoveAccountDialog()}
         </Grid>

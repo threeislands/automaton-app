@@ -82,6 +82,7 @@ function Play(props) {
       transitions: transitions
     }
     let data = await TestAutomatonService.testAutomaton(questionId, automaton);
+
     // 入力文字列の実行結果を初期化
     setSequenceStatusList(sequences.map(s => Object({id: s.id, status: 'none'})));
     setAnimationTarget(data);
